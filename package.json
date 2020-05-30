@@ -1,0 +1,29 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "A JavaScript project",
+  "main": "./dist/index.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch":"npx watchify ./public/main.js -o ./public/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "simple-peer": "^9.7.2",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "parcel-bundler": "^1.12.4",
+    "watchify": "^3.11.1"
+  }
+}
