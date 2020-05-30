@@ -76,11 +76,20 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
             document.write('Session Active. Please come back later')
         }
 
+        
+        function RemovePeer() {
+            document.getElementById("peerVideo").remove();
+            document.getElementById("muteText").remove();
+            if (client.peer) {
+                client.peer.destroy()
+            }
+        }
+
         socket.on('BackOffer', FrontAnswer)
         socket.on('BackAnswer', SignalAnswer)
         socket.on('SessionActive', SessionActive)
         socket.on('CreatePeer', MakePeer)
-        // socket.on('Disconnect', RemovePeer)
+        socket.on('Disconnect', RemovePeer)
 
     })
     .catch(err => document.write(err))
